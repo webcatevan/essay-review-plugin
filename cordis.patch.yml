@@ -1,0 +1,11 @@
+# Inserted when this bundle is installed into a profile.
+# The row mounts the plugin's host half (tools + /api/essay-review routes);
+# its browser half is the package's `dsh.client` entry (lib/client.js),
+# served by the client-modules graph.
+- insert:
+    - id: ui-essay-review
+      name: dsh-plugin-essay-review
+      config:
+        maxOutputTokens: 4096
+        timeoutMs: 240000
+        maxImageBytes: 12582912

@@ -1,0 +1,38 @@
+{
+  "name": "dsh-plugin-essay-review",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "作文片段评测：上传手写照片或粘贴文字，按字体工整、卷面整洁、语句、内容等维度评分并给出可执行的修改建议",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./skill/SKILL.md": "./skill/SKILL.md"
+  },
+  "files": [
+    "lib/*.js",
+    "cordis.patch.yml",
+    "skill",
+    "README.md",
+    "assets/*.png"
+  ],
+  "scripts": {
+    "test": "node --test tests/host.test.mjs tests/client.smoke.mjs",
+    "e2e": "node tools/browser-e2e.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.0-0 <0.3.0",
+    "node": ">=22"
+  },
+  "license": "MIT"
+}
